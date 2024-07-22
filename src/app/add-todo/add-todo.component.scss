@@ -1,0 +1,28 @@
+.todo-form {
+	display: flex;
+}
+
+.todo-input {
+	flex: 1;
+	margin-right: 16px;
+	padding: 8px 12px;
+	border: 1px solid #9e78cf;
+	border-radius: 8px;
+	background-color: transparent;
+	color: #eee;
+
+	&:active,
+	&:focus {
+		outline: #9e78cf solid 1px;
+	}
+}
+
+.submit-button {
+	min-width: 36px;
+	border: none;
+	border-radius: 8px;
+	background-color: #9e78cf;
+	font-weight: bold;
+	color: #eee;
+	cursor: pointer;
+}
