@@ -1,0 +1,7 @@
+<div class="todo-item" [class.checked]="todoItem.checked">
+	<p class="todo-text">{{ todoItem.text }}</p>
+	<button class="todo-button" (click)="handleCheck()">
+		{{ todoItem.checked ? "&#65336;" : "&#10003;" }}
+	</button>
+	<button class="todo-button" (click)="handleRemove()">🗑</button>
+</div>
