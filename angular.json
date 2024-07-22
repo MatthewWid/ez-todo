@@ -11,12 +11,12 @@
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
-					"style": "scss"
+					"style": "scss",
+					"skipTests": true
 				}
 			},
 			"root": "",
 			"sourceRoot": "src",
-			"prefix": "app",
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:application",
@@ -33,7 +33,10 @@
 								"input": "public"
 							}
 						],
-						"styles": ["src/styles.scss"],
+						"styles": [
+							"node_modules/normalize.css/normalize.css",
+							"src/styles.scss"
+						],
 						"scripts": []
 					},
 					"configurations": {
