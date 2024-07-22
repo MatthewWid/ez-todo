@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
-import { TodoService } from "../todo/todo.service";
+import { TodoService } from "../../todo.service";
 
 @Component({
 	selector: "add-todo",

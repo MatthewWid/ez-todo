@@ -2,10 +2,10 @@ import { Component } from "@angular/core";
 import { AddTodoComponent } from "../add-todo/add-todo.component";
 
 @Component({
-	selector: "todo-app",
+	selector: "todo-container",
 	standalone: true,
 	imports: [AddTodoComponent],
-	templateUrl: "./todo-app.component.html",
-	styleUrl: "./todo-app.component.scss",
+	templateUrl: "./todo-container.component.html",
+	styleUrl: "./todo-container.component.scss",
 })
-export class TodoAppComponent {}
+export class TodoContainerComponent {}
