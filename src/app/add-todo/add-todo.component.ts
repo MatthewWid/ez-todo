@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { TodoService } from "../todo/todo.service";
 
 @Component({
 	selector: "add-todo",
@@ -9,14 +10,14 @@ import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
 	styleUrl: "./add-todo.component.scss",
 })
 export class AddTodoComponent {
+	constructor(private todoService: TodoService) {}
+
 	form = new FormGroup({
 		text: new FormControl(""),
 	});
 
-	@Output() onSubmit = new EventEmitter<string>();
-
 	handleSubmit() {
-		this.onSubmit.emit(this.form.value.text as string);
+		this.todoService.addTodo(this.form.value.text as string);
 		this.form.reset();
 	}
 }

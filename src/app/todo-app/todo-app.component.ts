@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { Todo } from "../types/todo.type";
 import { AddTodoComponent } from "../add-todo/add-todo.component";
 
 @Component({
@@ -9,14 +8,4 @@ import { AddTodoComponent } from "../add-todo/add-todo.component";
 	templateUrl: "./todo-app.component.html",
 	styleUrl: "./todo-app.component.scss",
 })
-export class TodoAppComponent {
-	todos: Todo[] = [];
-
-	addTodo(text: string) {
-		this.todos.push({
-			id: crypto.randomUUID(),
-			text,
-			checked: false,
-		});
-	}
-}
+export class TodoAppComponent {}
