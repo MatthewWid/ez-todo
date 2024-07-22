@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { Todo } from "../../types/todo.type";
 import { TodoService } from "../../todo.service";
+import { Todo } from "../../types/todo.type";
 
 @Component({
 	selector: "todo-item",

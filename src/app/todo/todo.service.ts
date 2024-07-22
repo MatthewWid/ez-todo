@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 import { StorageService } from "../storage/storage.service";
 import { STORAGE_KEY } from "./todo.constants";
 import { Todo } from "./types/todo.type";
@@ -7,33 +8,39 @@ import { Todo } from "./types/todo.type";
 	providedIn: "root",
 })
 export class TodoService {
-	todos: Todo[];
+	private todos = new BehaviorSubject<Todo[]>([]);
 
 	constructor(private storageService: StorageService) {
-		this.todos = storageService.get(STORAGE_KEY) ?? [];
+		this.todos.next(storageService.get(STORAGE_KEY) ?? []);
+
+		this.todos.subscribe((todos) => {
+			this.storageService.set(STORAGE_KEY, todos);
+		});
+	}
+
+	getTodos() {
+		return this.todos.asObservable();
 	}
 
 	addTodo(text: string) {
-		this.todos = this.todos.concat({
-			id: crypto.randomUUID(),
-			text,
-			checked: false,
-		});
-
-		this.storageService.set(STORAGE_KEY, this.todos);
+		this.todos.next(
+			this.todos.value.concat({
+				id: crypto.randomUUID(),
+				text,
+				checked: false,
+			})
+		);
 	}
 
 	removeTodoById(id: string) {
-		this.todos = this.todos.filter((todo) => todo.id !== id);
-
-		this.storageService.set(STORAGE_KEY, this.todos);
+		this.todos.next(this.todos.value.filter((todo) => todo.id !== id));
 	}
 
 	toggleCheckById(id: string) {
-		this.todos = this.todos.map((todo) =>
-			todo.id === id ? { ...todo, checked: !todo.checked } : todo
+		this.todos.next(
+			this.todos.value.map((todo) =>
+				todo.id === id ? { ...todo, checked: !todo.checked } : todo
+			)
 		);
-
-		this.storageService.set(STORAGE_KEY, this.todos);
 	}
 }

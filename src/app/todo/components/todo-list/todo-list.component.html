@@ -1,10 +1,4 @@
-<h2>Tasks to do - {{ (todoService.todos | filterTodos: false).length }}</h2>
-<todo-item
-	*ngFor="let todoItem of todoService.todos | filterTodos: false"
-	[todoItem]="todoItem"
-/>
-<h2>Done - {{ (todoService.todos | filterTodos: true).length }}</h2>
-<todo-item
-	*ngFor="let todoItem of todoService.todos | filterTodos: true"
-	[todoItem]="todoItem"
-/>
+<h2>Tasks to do - {{ tasksTodo.length }}</h2>
+<todo-item *ngFor="let todoItem of tasksTodo" [todoItem]="todoItem" />
+<h2>Done - {{ tasksCompleted.length }}</h2>
+<todo-item *ngFor="let todoItem of tasksCompleted" [todoItem]="todoItem" />

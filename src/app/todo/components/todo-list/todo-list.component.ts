@@ -1,8 +1,9 @@
-import { Component } from "@angular/core";
-import { TodoService } from "../../todo.service";
-import { FilterTodosPipe } from "./filter-todos.pipe";
-import { TodoItemComponent } from "../todo-item/todo-item.component";
 import { CommonModule } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { TodoService } from "../../todo.service";
+import { Todo } from "../../types/todo.type";
+import { TodoItemComponent } from "../todo-item/todo-item.component";
+import { FilterTodosPipe } from "./filter-todos.pipe";
 
 @Component({
 	selector: "todo-list",
@@ -11,6 +12,16 @@ import { CommonModule } from "@angular/common";
 	templateUrl: "./todo-list.component.html",
 	styleUrl: "./todo-list.component.scss",
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
+	tasksTodo: Todo[] = [];
+	tasksCompleted: Todo[] = [];
+
 	constructor(public todoService: TodoService) {}
+
+	ngOnInit() {
+		this.todoService.getTodos().subscribe((todos) => {
+			this.tasksTodo = todos.filter((todo) => !todo.checked);
+			this.tasksCompleted = todos.filter((todo) => todo.checked);
+		});
+	}
 }
