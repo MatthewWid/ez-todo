@@ -32,6 +32,12 @@ importers:
       '@angular/router':
         specifier: ^18.1.0
         version: 18.1.1(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(@angular/platform-browser@18.1.1(@angular/animations@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(@angular/common@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1))(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(rxjs@7.8.1)
+      '@ng-icons/core':
+        specifier: ^29.0.0
+        version: 29.0.0(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1)
+      '@ng-icons/font-awesome':
+        specifier: ^29.0.0
+        version: 29.0.0
       normalize.css:
         specifier: ^8.0.1
         version: 8.0.1
@@ -1282,6 +1288,15 @@ packages:
 
   '@napi-rs/wasm-runtime@0.2.4':
     resolution: {integrity: sha512-9zESzOO5aDByvhIAsOy9TbpZ0Ur2AJbUI7UT73kcUTS2mxAMHOBaa1st/jAymNoCtvrit99kkzT1FZuXVcgfIQ==}
+
+  '@ng-icons/core@29.0.0':
+    resolution: {integrity: sha512-HAPB4KbMMCkc7SEk/kKzyNzSIRO241bVtXWUMQPr/JuY5Gd7Jh2fFjdue0VIUBP3qjjCEMOhwdZV6zsefrVVaA==}
+    peerDependencies:
+      '@angular/core': '>=18.0.0'
+      rxjs: ^6.5.3 || ^7.4.0
+
+  '@ng-icons/font-awesome@29.0.0':
+    resolution: {integrity: sha512-B4zqI21+P572nkuYdh/GD1dy0HWGuTfJ+YgL97Jihl7YGc0Bx9a16RyVmcurqLsQ5Q+lNraVlZZSg1KKEQv52Q==}
 
   '@ngtools/webpack@18.1.1':
     resolution: {integrity: sha512-mjlfnWcHtBZJUJaVyffJZZL8U1o1XUQwrFIKeiFUeatLDsjtv8EbLW9Ed1v3eAJyVuaTNKpsdZma1XdxzeLONw==}
@@ -6242,6 +6257,16 @@ snapshots:
       '@emnapi/core': 1.2.0
       '@emnapi/runtime': 1.2.0
       '@tybys/wasm-util': 0.9.0
+
+  '@ng-icons/core@29.0.0(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/core': 18.1.1(rxjs@7.8.1)(zone.js@0.14.8)
+      rxjs: 7.8.1
+      tslib: 2.6.3
+
+  '@ng-icons/font-awesome@29.0.0':
+    dependencies:
+      tslib: 2.6.3
 
   '@ngtools/webpack@18.1.1(@angular/compiler-cli@18.1.1(@angular/compiler@18.1.1(@angular/core@18.1.1(rxjs@7.8.1)(zone.js@0.14.8)))(typescript@5.5.3))(typescript@5.5.3)(webpack@5.92.1(esbuild@0.21.5))':
     dependencies:

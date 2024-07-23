@@ -1,7 +1,16 @@
 <div class="todo-item" [class.checked]="todoItem.checked">
 	<p class="todo-text">{{ todoItem.text }}</p>
 	<button class="todo-button" (click)="handleCheck()">
-		{{ todoItem.checked ? "&#65336;" : "&#10003;" }}
+		<span *ngIf="!todoItem.checked">
+			<ng-icon name="faSolidCheck" />
+		</span>
+		<span *ngIf="todoItem.checked">
+			<ng-icon name="faSolidX" />
+		</span>
 	</button>
-	<button class="todo-button" (click)="handleRemove()">🗑</button>
+	<button class="todo-button" (click)="handleRemove()">
+		<span>
+			<ng-icon name="faTrashCan" />
+		</span>
+	</button>
 </div>

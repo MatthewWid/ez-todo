@@ -1,3 +1,5 @@
+$accent-color: #9e78cf;
+
 .todo-form {
 	display: flex;
 }
@@ -6,23 +8,33 @@
 	flex: 1;
 	margin-right: 16px;
 	padding: 8px 12px;
-	border: 1px solid #9e78cf;
+	border: 1px solid $accent-color;
 	border-radius: 8px;
 	background-color: transparent;
 	color: #eee;
 
 	&:active,
 	&:focus {
-		outline: #9e78cf solid 1px;
+		outline: $accent-color solid 1px;
 	}
 }
 
 .submit-button {
 	min-width: 36px;
+	cursor: pointer;
 	border: none;
 	border-radius: 8px;
-	background-color: #9e78cf;
 	font-weight: bold;
 	color: #eee;
-	cursor: pointer;
+	background-color: $accent-color;
+	transition: background-color 0.1s ease;
+
+	span {
+		display: block;
+		transform: translateY(2px);
+	}
+
+	&:hover {
+		background-color: darken($accent-color, 6%);
+	}
 }

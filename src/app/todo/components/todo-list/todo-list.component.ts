@@ -3,12 +3,11 @@ import { Component, OnInit } from "@angular/core";
 import { TodoService } from "../../todo.service";
 import { Todo } from "../../types/todo.type";
 import { TodoItemComponent } from "../todo-item/todo-item.component";
-import { FilterTodosPipe } from "./filter-todos.pipe";
 
 @Component({
 	selector: "todo-list",
 	standalone: true,
-	imports: [CommonModule, FilterTodosPipe, TodoItemComponent],
+	imports: [CommonModule, TodoItemComponent],
 	templateUrl: "./todo-list.component.html",
 	styleUrl: "./todo-list.component.scss",
 })
