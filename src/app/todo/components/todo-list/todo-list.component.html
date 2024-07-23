@@ -1,4 +1,19 @@
-<h2>Tasks to do - {{ tasksTodo.length }}</h2>
-<todo-item *ngFor="let todoItem of tasksTodo" [todoItem]="todoItem" />
-<h2>Done - {{ tasksCompleted.length }}</h2>
-<todo-item *ngFor="let todoItem of tasksCompleted" [todoItem]="todoItem" />
+<div *ngIf="tasksTodo.length > 0; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+	<h2>Tasks to do - {{ tasksTodo.length }}</h2>
+	<todo-item *ngFor="let todoItem of tasksTodo" [todoItem]="todoItem" />
+</ng-template>
+<ng-template #elseBlock>
+	<p>
+		{{
+			tasksCompleted.length > 0
+				? "All tasks completed 🎉"
+				: "No tasks yet. Try adding one!"
+		}}
+	</p>
+</ng-template>
+
+<div *ngIf="tasksCompleted.length > 0">
+	<h2>Done - {{ tasksCompleted.length }}</h2>
+	<todo-item *ngFor="let todoItem of tasksCompleted" [todoItem]="todoItem" />
+</div>
