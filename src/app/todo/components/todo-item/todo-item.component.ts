@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, Input } from "@angular/core";
 import { NgIconComponent, provideIcons } from "@ng-icons/core";
 import { faTrashCan } from "@ng-icons/font-awesome/regular";
-import { faSolidCheck, faSolidX } from "@ng-icons/font-awesome/solid";
+import { faSolidCheck, faSolidRotateLeft } from "@ng-icons/font-awesome/solid";
 import { TodoService } from "../../todo.service";
 import { Todo } from "../../types/todo.type";
 
@@ -10,7 +10,7 @@ import { Todo } from "../../types/todo.type";
 	selector: "todo-item",
 	standalone: true,
 	imports: [CommonModule, NgIconComponent],
-	providers: [provideIcons({ faSolidCheck, faSolidX, faTrashCan })],
+	providers: [provideIcons({ faSolidCheck, faSolidRotateLeft, faTrashCan })],
 	templateUrl: "./todo-item.component.html",
 	styleUrl: "./todo-item.component.scss",
 })

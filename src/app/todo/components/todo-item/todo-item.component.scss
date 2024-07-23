@@ -8,10 +8,20 @@
 	margin-bottom: 16px;
 
 	&.checked {
+		overflow: hidden;
 		color: #78cfb0;
 
 		.todo-text {
 			text-decoration: line-through;
+		}
+
+		.todo-button {
+			transform: translateX(350%);
+			transition: transform 0.2s ease-out;
+		}
+
+		&:hover .todo-button {
+			transform: translateX(0%);
 		}
 	}
 }
