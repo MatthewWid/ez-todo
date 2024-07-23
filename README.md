@@ -1,27 +1,50 @@
-# EzTodo
+# ✅ EzTodo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+A simple to-do app made to learn Angular.
 
-## Development server
+See [a live demo here](https://matthewwid.github.io/ez-todo/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Based on [this design](https://www.figma.com/community/file/1348652218299666548) by [@lucasviga](https://github.com/lucasviga).
 
-## Code scaffolding
+<p align="center">
+  <img src="./docs/images/demo.gif" width="80%" />
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- 📃 Create and delete tasks.
+- ✔ Check tasks off as completed.
+- 💻 Tasks are persisted in browser storage.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Development
 
-## Running unit tests
+Install Node:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+curl -L https://git.io/n-install | bash
+n auto
+```
 
-## Running end-to-end tests
+Install pnpm:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm i -g pnpm
+```
 
-## Further help
+Install dependencies:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+pnpm i
+```
+
+Run development server:
+
+```bash
+pnpm run dev
+```
+
+Build for production:
+
+```bash
+pnpm run build
+```
