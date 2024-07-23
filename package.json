@@ -1,6 +1,6 @@
 {
 	"name": "ez-todo",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -11,6 +11,11 @@
 		"format": "prettier --write ./src/**/*.{ts,scss,css,html,json} ./*.json"
 	},
 	"private": true,
+	"packageManager": "pnpm@9.6.0",
+	"engines": {
+		"node": ">=20",
+		"pnpm": ">=9"
+	},
 	"dependencies": {
 		"@angular/animations": "^18.1.0",
 		"@angular/common": "^18.1.0",
