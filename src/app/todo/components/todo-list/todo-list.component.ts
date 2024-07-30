@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
+import { filter, map, Observable } from "rxjs";
 import { TodoService } from "../../todo.service";
 import { Todo } from "../../types/todo.type";
 import { TodoItemComponent } from "../todo-item/todo-item.component";
@@ -12,15 +13,19 @@ import { TodoItemComponent } from "../todo-item/todo-item.component";
 	styleUrl: "./todo-list.component.scss",
 })
 export class TodoListComponent implements OnInit {
-	tasksTodo: Todo[] = [];
-	tasksCompleted: Todo[] = [];
+	tasksTodo!: Observable<Todo[]>;
+	tasksCompleted!: Observable<Todo[]>;
 
 	constructor(public todoService: TodoService) {}
 
 	ngOnInit() {
-		this.todoService.getTodos().subscribe((todos) => {
-			this.tasksTodo = todos.filter((todo) => !todo.checked);
-			this.tasksCompleted = todos.filter((todo) => todo.checked);
-		});
+		const todos$ = this.todoService.getTodos();
+
+		this.tasksTodo = todos$.pipe(
+			map((todos) => todos.filter((todo) => !todo.checked))
+		);
+		this.tasksCompleted = todos$.pipe(
+			map((todos) => todos.filter((todo) => todo.checked))
+		);
 	}
 }
